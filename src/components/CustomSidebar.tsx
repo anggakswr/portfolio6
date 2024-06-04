@@ -11,7 +11,7 @@ export default function CustomSidebar() {
           src="/img/sidebar/profile.jpg"
           alt="Profile"
           radius="full"
-          className="mb-4 border-2 border-white"
+          className="mb-4 border-2"
         />
 
         <div className="mb-4 text-center font-bold">
@@ -45,6 +45,6 @@ export default function CustomSidebar() {
 const menus = [
   { link: "/", text: "Home" },
   { link: "/projects", text: "Projects" },
-  { link: "/content", text: "Content" },
+  { link: "/contents", text: "Contents" },
   { link: "/contact", text: "Contact" },
 ];

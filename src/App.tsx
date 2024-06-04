@@ -17,6 +17,12 @@ function App() {
             <Outlet />
           </div>
         </div>
+
+        <div className="mt-8 border-t p-4 text-center">
+          <p className="text-sm font-bold">
+            Made with &hearts; by Kamiswara Angga W.
+          </p>
+        </div>
       </div>
     </NextUIProvider>
   );

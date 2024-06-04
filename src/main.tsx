@@ -6,6 +6,8 @@ import { createHashRouter, RouterProvider } from "react-router-dom";
 import Projects from "./pages/Projects.tsx";
 import Home from "./pages/Home.tsx";
 import Error from "./pages/Error.tsx";
+import Contents from "./pages/Contents.tsx";
+import Contact from "./pages/Contact.tsx";
 
 const router = createHashRouter([
   {
@@ -20,6 +22,14 @@ const router = createHashRouter([
       {
         path: "projects",
         element: <Projects />,
+      },
+      {
+        path: "contents",
+        element: <Contents />,
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },

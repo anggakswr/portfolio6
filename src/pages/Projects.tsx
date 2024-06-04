@@ -18,13 +18,13 @@ export default function Projects() {
       <hr className="my-6" />
 
       {projects.map((proj) => (
-        <div key={proj.title} className="mb-8">
-          <div className="box-equal gap-4 bg-white p-4">
+        <div key={proj.title} className="mb-8 overflow-hidden rounded-t-xl">
+          <p className="box-equal gap-4 bg-white p-4">
             <Image src={proj.img} alt={proj.title} width={40} radius="none" />
-            <p className="font-bold text-black">{proj.title}</p>
-          </div>
+            <span className="font-bold text-black">{proj.title}</span>
+          </p>
 
-          <div className="relative bg-white p-4">
+          <div className="relative rounded-bl-xl bg-white p-4">
             {/* bg */}
             <div className="pattern1 absolute inset-0"></div>
 
@@ -40,7 +40,7 @@ export default function Projects() {
 
           {proj.link ? (
             <div className="box-end">
-              <div className="w-1/2 bg-gradient-to-r from-gray-800 to-gray-700 p-4">
+              <div className="w-1/2 rounded-b-xl bg-gradient-to-r from-gray-800 to-gray-700 p-4">
                 <div className="box-between mb-2">
                   <div className="box-equal gap-4">
                     <GoDotFill
