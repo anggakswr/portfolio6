@@ -8,6 +8,7 @@ import {
   BsTiktok,
   BsYoutube,
 } from "react-icons/bs";
+import { PiDevToLogo } from "react-icons/pi";
 
 export default function Contact() {
   return (
@@ -32,7 +33,15 @@ export default function Contact() {
       <p className="mb-4 font-bold">Find me on</p>
 
       {socials.map((soc) => (
-        <Button key={soc.link} isIconOnly className="mr-4 bg-white">
+        <Button
+          as={`a`}
+          href={soc.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={soc.link}
+          isIconOnly
+          className="mr-4 bg-white"
+        >
           {soc.icon}
         </Button>
       ))}
@@ -41,7 +50,7 @@ export default function Contact() {
 
       <p className="mb-4 font-bold">My coding gears</p>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {gears.map((gear) => (
           <div key={gear.link} className="overflow-hidden rounded-xl">
             <Image
@@ -71,16 +80,16 @@ export default function Contact() {
 
       <p className="mb-4 font-bold">My coding classes</p>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         <Image src="/img/classes/kelas-js.jpg" alt="Kelas JS" />
         <Image src="/img/classes/kelas-react.jpg" alt="Kelas React" />
       </div>
 
       <hr className="my-6" />
 
-      <p className="mb-4 font-bold">My coding classes</p>
+      <p className="mb-4 font-bold">My source codes</p>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         <div className="overflow-hidden rounded-xl border">
           <Image
             src="/img/source-codes/crud-fullstack.jpg"
@@ -103,7 +112,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="mr-4 bg-white"
             >
-              Order
+              Buy
             </Button>
 
             <Button
@@ -164,5 +173,9 @@ const socials = [
   {
     icon: <BsTiktok className="fill-black" size={20} />,
     link: "https://www.tiktok.com/@anggakswr",
+  },
+  {
+    icon: <PiDevToLogo className="fill-black" size={20} />,
+    link: "https://dev.to/anggakswr",
   },
 ];

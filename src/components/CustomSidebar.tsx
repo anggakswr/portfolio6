@@ -6,7 +6,7 @@ export default function CustomSidebar() {
 
   return (
     <>
-      <div className="fixed w-48">
+      <div className="fixed hidden w-48 md:block">
         <Image
           src="/img/sidebar/profile.jpg"
           alt="Profile"

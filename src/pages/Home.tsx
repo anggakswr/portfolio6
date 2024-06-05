@@ -6,7 +6,7 @@ import { BiCode, BiDownload } from "react-icons/bi";
 export default function Home() {
   return (
     <>
-      <div className="mb-6 flex items-start justify-between">
+      <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
           <p className="mb-2 text-xl">Hi, I'm Angga</p>
           <p className="text-blue-500">
@@ -33,7 +33,7 @@ export default function Home() {
 
       <hr className="my-6" />
 
-      <div className="box-between mb-8">
+      <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
           <div className="box-equal mb-4 gap-4">
             <FaSuitcase size={25} />
@@ -54,7 +54,7 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid gap-4 md:grid-cols-2">
         {/* card */}
         {exps.map((exp) => (
           <div key={exp.office} className="relative rounded-lg bg-white p-4">

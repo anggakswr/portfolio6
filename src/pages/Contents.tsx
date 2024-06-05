@@ -46,7 +46,7 @@ export default function Contents() {
 
       <p className="mb-4 font-bold">Latest Videos</p>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid gap-4 md:grid-cols-3">
         {/* videos */}
         {videos.map((vid) => (
           <div key={vid.title}>
@@ -67,9 +67,15 @@ export default function Contents() {
               href={vid.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block min-h-10 rounded-b-lg border-2 border-blue-500 bg-white px-2 py-1 text-sm font-bold text-black"
+              className="relative block min-h-10 rounded-b-lg border-2 border-blue-500 bg-white px-2 py-1"
             >
-              {vid.title}
+              {/* bg */}
+              <span className="pattern1 absolute inset-0"></span>
+
+              {/* content */}
+              <span className="relative z-10 text-sm font-bold text-black">
+                {vid.title}
+              </span>
             </a>
           </div>
         ))}
@@ -79,7 +85,9 @@ export default function Contents() {
 
       <p className="mb-4 font-bold">Latest Writings</p>
 
-      <div className="grid grid-cols-3 gap-4">
+      {!articles?.length ? <p>No data.</p> : null}
+
+      <div className="grid gap-4 md:grid-cols-3">
         {/* articles */}
         {articles.map((art) => (
           <div key={art.title}>
@@ -100,9 +108,13 @@ export default function Contents() {
               href={art.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block min-h-14 rounded-b-lg border-2 border-blue-500 bg-white px-2 py-1 text-sm font-bold text-black"
+              className="relative block min-h-14 rounded-b-lg border-2 border-blue-500 bg-white px-2 py-1"
             >
-              {art.title}
+              {/* bg */}
+              <span className="pattern1 absolute inset-0"></span>
+
+              {/* content */}
+              <span className="text-sm font-bold text-black">{art.title}</span>
             </a>
           </div>
         ))}

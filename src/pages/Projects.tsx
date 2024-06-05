@@ -19,10 +19,10 @@ export default function Projects() {
 
       {projects.map((proj) => (
         <div key={proj.title} className="mb-8 overflow-hidden rounded-t-xl">
-          <p className="box-equal gap-4 bg-white p-4">
+          <div className="box-equal gap-4 bg-white p-4">
             <Image src={proj.img} alt={proj.title} width={40} radius="none" />
             <span className="font-bold text-black">{proj.title}</span>
-          </p>
+          </div>
 
           <div className="relative rounded-bl-xl bg-white p-4">
             {/* bg */}
@@ -40,7 +40,7 @@ export default function Projects() {
 
           {proj.link ? (
             <div className="box-end">
-              <div className="w-1/2 rounded-b-xl bg-gradient-to-r from-gray-800 to-gray-700 p-4">
+              <div className="rounded-b-xl bg-gradient-to-r from-gray-800 to-gray-700 p-4 md:w-1/2">
                 <div className="box-between mb-2">
                   <div className="box-equal gap-4">
                     <GoDotFill
