@@ -2,6 +2,7 @@ import { Button, Chip, Image } from "@nextui-org/react";
 import { GoDotFill } from "react-icons/go";
 import { FaSuitcase } from "react-icons/fa";
 import { BiCode, BiDownload } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
         </div>
 
         <Button
+          as={Link}
+          to={`/contact`}
           className="bg-white"
           startContent={
             <GoDotFill size={50} className="animate-pulse fill-green-500" />
