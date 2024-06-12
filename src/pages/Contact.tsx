@@ -83,6 +83,7 @@ export default function Contact() {
       <div className="grid gap-4 md:grid-cols-2">
         <Image src="/img/classes/kelas-js.jpg" alt="Kelas JS" />
         <Image src="/img/classes/kelas-react.jpg" alt="Kelas React" />
+        <Image src="/img/classes/kelas-html-css.jpg" alt="Kelas HTML & CSS" />
       </div>
 
       <hr className="my-6" />
