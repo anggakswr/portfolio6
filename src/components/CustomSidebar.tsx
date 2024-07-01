@@ -6,12 +6,12 @@ export default function CustomSidebar() {
 
   return (
     <>
-      <div className="fixed hidden w-48 md:block">
+      <div className="fixed hidden h-[90%] w-48 overflow-y-scroll px-4 md:block">
         <Image
           src="/img/sidebar/profile.jpg"
           alt="Profile"
           radius="full"
-          className="mb-4 border-2"
+          className="mx-auto mb-4 w-3/4 border-2"
         />
 
         <div className="mb-4 text-center font-bold">
@@ -47,4 +47,7 @@ const menus = [
   { link: "/projects", text: "Projects" },
   { link: "/contents", text: "Contents" },
   { link: "/contact", text: "Contact" },
+  { link: "/gears", text: "Gears" },
+  { link: "/classes", text: "Classes" },
+  { link: "/codes", text: "Codes" },
 ];

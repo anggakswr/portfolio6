@@ -20,13 +20,13 @@ function App() {
           {/* content */}
           <div className="flex-1">
             <Outlet />
-          </div>
-        </div>
 
-        <div className="mt-8 border-t p-4 text-center">
-          <p className="text-sm font-bold">
-            Made with &hearts; by Kamiswara Angga W.
-          </p>
+            <div className="mt-8 border-t p-4 text-center">
+              <p className="text-sm font-bold">
+                Made with &hearts; by Kamiswara Angga W.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </NextUIProvider>
