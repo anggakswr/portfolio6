@@ -42,7 +42,7 @@ export default function CustomSidebar() {
   );
 }
 
-const menus = [
+export const menus = [
   { link: "/", text: "Home" },
   { link: "/projects", text: "Projects" },
   { link: "/contents", text: "Contents" },

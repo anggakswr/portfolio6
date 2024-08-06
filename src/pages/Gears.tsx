@@ -16,7 +16,13 @@ export default function Gears() {
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {gears.map((gear) => (
-          <div key={gear.link} className="overflow-hidden rounded-xl">
+          <a
+            href={gear.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={gear.link}
+            className="overflow-hidden rounded-xl"
+          >
             <Image
               src={gear.img}
               alt="Laptop Lenovo"
@@ -25,10 +31,7 @@ export default function Gears() {
             />
 
             <Button
-              as={`a`}
-              href={gear.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              as={`div`}
               className="w-full rounded-b-xl text-white"
               radius="none"
               variant="bordered"
@@ -36,7 +39,7 @@ export default function Gears() {
             >
               {gear.text}
             </Button>
-          </div>
+          </a>
         ))}
       </div>
     </>

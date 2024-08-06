@@ -9,28 +9,12 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { menus } from "./CustomSidebar";
 
 export default function CustomNavbarV2() {
   const [opened, setOpened] = useState(false);
 
-  const menuItems = [
-    {
-      text: "Home",
-      link: "/",
-    },
-    {
-      text: "Projects",
-      link: "/projects",
-    },
-    {
-      text: "Contents",
-      link: "/contents",
-    },
-    {
-      text: "Contact",
-      link: "/contact",
-    },
-  ];
+  const menuItems = menus;
 
   return (
     <Navbar
