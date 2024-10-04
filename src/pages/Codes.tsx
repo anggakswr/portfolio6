@@ -26,7 +26,6 @@ export default function Codes() {
 
             <div className="p-4">
               <p className="mb-1 font-bold">{sc.title}</p>
-
               <p className="mb-4 text-sm">{sc.desc}</p>
 
               <Button
