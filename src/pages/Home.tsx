@@ -3,8 +3,29 @@ import { GoDotFill } from "react-icons/go";
 import { FaSuitcase } from "react-icons/fa";
 import { BiCode, BiDownload } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
   return (
     <>
       <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row">
@@ -57,10 +78,19 @@ export default function Home() {
         </Button>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="grid gap-4 md:grid-cols-2"
+      >
         {/* card */}
         {exps.map((exp) => (
-          <div key={exp.office} className="relative rounded-lg bg-white p-4">
+          <motion.div
+            key={exp.office}
+            className="relative rounded-lg bg-white p-4"
+            variants={item}
+          >
             {/* bg */}
             <div className="pattern1 absolute inset-0"></div>
 
@@ -81,9 +111,9 @@ export default function Home() {
                 <p className="text-black">{exp.time}</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <hr className="my-6" />
 

@@ -8,17 +8,34 @@ export default function CustomSidebar() {
   return (
     <>
       <div className="fixed hidden h-[90%] w-48 overflow-y-scroll px-4 md:block">
-        <Image
-          src="/img/sidebar/profile.jpg"
-          alt="Profile"
-          radius="full"
-          className="mx-auto mb-4 w-3/4 border-2"
-        />
+        <motion.div
+          initial={{ rotate: 180, scale: 0 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+        >
+          <Image
+            src="/img/sidebar/profile.jpg"
+            alt="Profile"
+            radius="full"
+            className="mx-auto mb-4 w-3/4 border-2"
+          />
+        </motion.div>
 
-        <div className="mb-4 text-center font-bold">
+        <motion.div
+          className="mb-4 text-center font-bold"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+        >
           <p>Kamiswara Angga W.</p>
           <p className="text-sm text-blue-500">@anggakswr</p>
-        </div>
+        </motion.div>
 
         <hr className="mb-4" />
 
