@@ -27,33 +27,38 @@ export default function Home() {
   };
 
   return (
-    <>
+    <motion.div variants={container} initial="hidden" animate="visible">
       <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
-          <p className="mb-2 text-xl">Hi, I'm Angga</p>
-          <p className="text-blue-500">
+          <motion.p variants={item} className="mb-2 text-xl">
+            Hi, I'm Angga
+          </motion.p>
+
+          <motion.p variants={item} className="text-blue-500">
             Frontend Developer &middot; Based in Indonesia
-          </p>
+          </motion.p>
         </div>
 
-        <Button
-          as={Link}
-          to={`/contact`}
-          className="bg-white"
-          startContent={
-            <GoDotFill size={50} className="animate-pulse fill-green-500" />
-          }
-        >
-          Hire me!
-        </Button>
+        <motion.div variants={item}>
+          <Button
+            as={Link}
+            to={`/contact`}
+            className="bg-white"
+            startContent={
+              <GoDotFill size={50} className="animate-pulse fill-green-500" />
+            }
+          >
+            Hire me!
+          </Button>
+        </motion.div>
       </div>
 
-      <p>
+      <motion.p variants={item}>
         Hello, I'm Angga, a seasoned professional with over three years of
         hands-on experience in web development. I specialize in utilizing
         cutting-edge tools such as Next.js, Tailwind CSS, and TypeScript to
         craft innovative and dynamic web solutions.
-      </p>
+      </motion.p>
 
       <hr className="my-6" />
 
@@ -78,12 +83,7 @@ export default function Home() {
         </Button>
       </div>
 
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className="grid gap-4 md:grid-cols-2"
-      >
+      <div className="grid gap-4 md:grid-cols-2">
         {/* card */}
         {exps.map((exp) => (
           <motion.div
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
 
       <hr className="my-6" />
 
@@ -137,7 +137,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }
 
