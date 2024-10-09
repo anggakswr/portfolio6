@@ -12,7 +12,7 @@ export default function Home() {
       opacity: 1,
       scale: 1,
       transition: {
-        delayChildren: 0.3,
+        // delayChildren: 0.3,
         staggerChildren: 0.2,
       },
     },
@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <motion.div variants={container} initial="hidden" animate="visible">
+    <motion.div variants={container} initial="hidden" whileInView="visible">
       <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
           <motion.p variants={item} className="mb-2 text-xl">
@@ -64,23 +64,27 @@ export default function Home() {
 
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
-          <div className="box-equal mb-4 gap-4">
+          <motion.div variants={item} className="box-equal mb-4 gap-4">
             <FaSuitcase size={25} />
             <p className="text-xl">Experiences</p>
-          </div>
+          </motion.div>
 
-          <p className="text-blue-500">My professional career journey.</p>
+          <motion.p variants={item} className="text-blue-500">
+            My professional career journey.
+          </motion.p>
         </div>
 
-        <Button
-          as={`a`}
-          href="/docs/cv-angga-ats.pdf"
-          download
-          className="bg-white"
-          startContent={<BiDownload size={20} className="fill-black" />}
-        >
-          Download CV
-        </Button>
+        <motion.div variants={item}>
+          <Button
+            as={`a`}
+            href="/docs/cv-angga-ats.pdf"
+            download
+            className="bg-white"
+            startContent={<BiDownload size={20} className="fill-black" />}
+          >
+            Download CV
+          </Button>
+        </motion.div>
       </div>
 
       <div className="grid gap-4 md:grid-cols-2">
@@ -119,21 +123,25 @@ export default function Home() {
 
       <div className="box-between mb-8">
         <div className="font-bold">
-          <div className="box-equal mb-4 gap-4">
+          <motion.div variants={item} className="box-equal mb-4 gap-4">
             <BiCode size={25} />
             <p className="text-xl">Tools</p>
-          </div>
+          </motion.div>
 
-          <p className="mb-8 text-blue-500">My coding tools.</p>
+          <motion.p variants={item} className="mb-8 text-blue-500">
+            My coding tools.
+          </motion.p>
 
           {skills.map((skill) => (
-            <Chip
+            <motion.div
               key={skill.text}
-              size="lg"
-              className={`mb-4 mr-4 bg-white text-sm`}
+              className="inline-block"
+              variants={item}
             >
-              {skill.text}
-            </Chip>
+              <Chip size="lg" className={`mb-4 mr-4 bg-white text-sm`}>
+                {skill.text}
+              </Chip>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Image } from "@nextui-org/react";
 import { CgArrowTopRight } from "react-icons/cg";
 import { GoDotFill } from "react-icons/go";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
@@ -18,7 +19,17 @@ export default function Projects() {
       <hr className="my-6" />
 
       {projects.map((proj) => (
-        <div key={proj.title} className="mb-8 overflow-hidden rounded-t-xl">
+        <motion.div
+          key={proj.title}
+          className="mb-8 overflow-hidden rounded-t-xl"
+          initial={{ rotate: 180, scale: 0 }}
+          whileInView={{ rotate: 0, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+          }}
+        >
           <div className="box-equal gap-4 bg-white p-4">
             <Image src={proj.img} alt={proj.title} width={40} radius="none" />
             <span className="font-bold text-black">{proj.title}</span>
@@ -66,7 +77,7 @@ export default function Projects() {
               </div>
             </div>
           ) : null}
-        </div>
+        </motion.div>
       ))}
     </>
   );

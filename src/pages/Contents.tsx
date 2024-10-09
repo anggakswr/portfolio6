@@ -2,6 +2,7 @@ import { Image } from "@nextui-org/react";
 import axios from "axios";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface IArticle {
   url: string;
@@ -49,7 +50,16 @@ export default function Contents() {
       <div className="grid gap-4 md:grid-cols-3">
         {/* videos */}
         {videos.map((vid) => (
-          <div key={vid.title}>
+          <motion.div
+            key={vid.title}
+            initial={{ rotate: 180, scale: 0 }}
+            whileInView={{ rotate: 0, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
             <div className="box-end">
               <p className="rounded-t bg-blue-500 px-2 py-1 text-xs font-bold">
                 {vid.subtitle}
@@ -77,7 +87,7 @@ export default function Contents() {
                 {vid.title}
               </span>
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
 
@@ -90,7 +100,16 @@ export default function Contents() {
       <div className="grid gap-4 md:grid-cols-3">
         {/* articles */}
         {articles.map((art) => (
-          <div key={art.title}>
+          <motion.div
+            key={art.title}
+            initial={{ rotate: 180, scale: 0 }}
+            whileInView={{ rotate: 0, scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
             <div className="box-end">
               <p className="rounded-t bg-blue-500 px-2 py-1 text-xs font-bold">
                 {dayjs(art.published_at).format("MMM D, YYYY")}
@@ -116,7 +135,7 @@ export default function Contents() {
               {/* content */}
               <span className="text-sm font-bold text-black">{art.title}</span>
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>
