@@ -28,7 +28,7 @@ export default function CustomSidebar() {
         <motion.div
           className="mb-4 text-center font-bold"
           initial={{ y: 20, opacity: 0 }}
-          animate={{
+          whileInView={{
             y: 0,
             opacity: 1,
           }}

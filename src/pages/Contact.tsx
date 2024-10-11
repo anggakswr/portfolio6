@@ -7,6 +7,7 @@ import {
   BsYoutube,
 } from "react-icons/bs";
 import { PiDevToLogo } from "react-icons/pi";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
@@ -30,19 +31,27 @@ export default function Contact() {
 
       <p className="mb-4 font-bold">Find me on</p>
 
-      {socials.map((soc) => (
-        <Button
-          as={`a`}
-          href={soc.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          key={soc.link}
-          isIconOnly
-          className="mr-4 bg-white"
-        >
-          {soc.icon}
-        </Button>
-      ))}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+      >
+        {socials.map((soc) => (
+          <Button
+            as={`a`}
+            href={soc.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={soc.link}
+            isIconOnly
+            className="mr-4 bg-white"
+          >
+            {soc.icon}
+          </Button>
+        ))}
+      </motion.div>
     </>
   );
 }

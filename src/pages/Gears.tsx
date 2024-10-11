@@ -1,6 +1,7 @@
 import { Button, Image } from "@nextui-org/react";
 import { BiBox, BiLaptop } from "react-icons/bi";
 import { BsKeyboard } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 export default function Gears() {
   return (
@@ -16,12 +17,17 @@ export default function Gears() {
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {gears.map((gear) => (
-          <a
+          <motion.a
             href={gear.link}
             target="_blank"
             rel="noopener noreferrer"
             key={gear.link}
             className="overflow-hidden rounded-xl"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
           >
             <Image
               src={gear.img}
@@ -39,7 +45,7 @@ export default function Gears() {
             >
               {gear.text}
             </Button>
-          </a>
+          </motion.a>
         ))}
       </div>
     </>

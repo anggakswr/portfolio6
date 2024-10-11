@@ -1,4 +1,5 @@
 import { Button, Image } from "@nextui-org/react";
+import { motion } from "framer-motion";
 
 export default function Codes() {
   return (
@@ -18,9 +19,14 @@ export default function Codes() {
 
       <div className="grid gap-4 md:grid-cols-2">
         {sourceCodes.map((sc) => (
-          <div
+          <motion.div
             key={`sc-${sc.link}`}
             className="overflow-hidden rounded-xl border"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
           >
             <Image src={sc.img} alt={sc.title} radius="none" />
 
@@ -49,7 +55,7 @@ export default function Codes() {
                 View
               </Button>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </>

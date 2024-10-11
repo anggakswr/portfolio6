@@ -6,40 +6,40 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        // delayChildren: 0.3,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-    },
-  };
-
   return (
-    <motion.div variants={container} initial="hidden" whileInView="visible">
+    <div>
       <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
-          <motion.p variants={item} className="mb-2 text-xl">
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            className="mb-2 text-xl"
+          >
             Hi, I'm Angga
           </motion.p>
 
-          <motion.p variants={item} className="text-blue-500">
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            className="text-blue-500"
+          >
             Frontend Developer &middot; Based in Indonesia
           </motion.p>
         </div>
 
-        <motion.div variants={item}>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+        >
           <Button
             as={Link}
             to={`/contact`}
@@ -53,7 +53,13 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <motion.p variants={item}>
+      <motion.p
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+        }}
+      >
         Hello, I'm Angga, a seasoned professional with over three years of
         hands-on experience in web development. I specialize in utilizing
         cutting-edge tools such as Next.js, Tailwind CSS, and TypeScript to
@@ -64,17 +70,37 @@ export default function Home() {
 
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row">
         <div className="font-bold">
-          <motion.div variants={item} className="box-equal mb-4 gap-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            className="box-equal mb-4 gap-4"
+          >
             <FaSuitcase size={25} />
             <p className="text-xl">Experiences</p>
           </motion.div>
 
-          <motion.p variants={item} className="text-blue-500">
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            className="text-blue-500"
+          >
             My professional career journey.
           </motion.p>
         </div>
 
-        <motion.div variants={item}>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+          }}
+        >
           <Button
             as={`a`}
             href="/docs/cv-angga-ats.pdf"
@@ -93,7 +119,11 @@ export default function Home() {
           <motion.div
             key={exp.office}
             className="relative rounded-lg bg-white p-4"
-            variants={item}
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
           >
             {/* bg */}
             <div className="pattern1 absolute inset-0"></div>
@@ -123,12 +153,26 @@ export default function Home() {
 
       <div className="box-between mb-8">
         <div className="font-bold">
-          <motion.div variants={item} className="box-equal mb-4 gap-4">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            className="box-equal mb-4 gap-4"
+          >
             <BiCode size={25} />
             <p className="text-xl">Tools</p>
           </motion.div>
 
-          <motion.p variants={item} className="mb-8 text-blue-500">
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
+            }}
+            className="mb-8 text-blue-500"
+          >
             My coding tools.
           </motion.p>
 
@@ -136,7 +180,11 @@ export default function Home() {
             <motion.div
               key={skill.text}
               className="inline-block"
-              variants={item}
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{
+                y: 0,
+                opacity: 1,
+              }}
             >
               <Chip size="lg" className={`mb-4 mr-4 bg-white text-sm`}>
                 {skill.text}
@@ -145,7 +193,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 

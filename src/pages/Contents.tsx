@@ -52,12 +52,10 @@ export default function Contents() {
         {videos.map((vid) => (
           <motion.div
             key={vid.title}
-            initial={{ rotate: 180, scale: 0 }}
-            whileInView={{ rotate: 0, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
             }}
           >
             <div className="box-end">
@@ -102,12 +100,10 @@ export default function Contents() {
         {articles.map((art) => (
           <motion.div
             key={art.title}
-            initial={{ rotate: 180, scale: 0 }}
-            whileInView={{ rotate: 0, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{
+              y: 0,
+              opacity: 1,
             }}
           >
             <div className="box-end">

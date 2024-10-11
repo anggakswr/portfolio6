@@ -22,12 +22,10 @@ export default function Projects() {
         <motion.div
           key={proj.title}
           className="mb-8 overflow-hidden rounded-t-xl"
-          initial={{ rotate: 180, scale: 0 }}
-          whileInView={{ rotate: 0, scale: 1 }}
-          transition={{
-            type: "spring",
-            stiffness: 260,
-            damping: 20,
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
           }}
         >
           <div className="box-equal gap-4 bg-white p-4">
