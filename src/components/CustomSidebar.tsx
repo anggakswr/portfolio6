@@ -71,6 +71,5 @@ export const menus = [
   { link: "/contents", text: "Contents" },
   { link: "/contact", text: "Contact" },
   { link: "/gears", text: "Gears" },
-  { link: "/classes", text: "Classes" },
   { link: "/codes", text: "Codes" },
 ];

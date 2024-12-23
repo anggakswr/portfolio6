@@ -16,9 +16,10 @@ export default function Classes() {
       <hr className="my-6" />
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Image src="/img/classes/kelas-js.jpg" alt="Kelas JS" />
-        <Image src="/img/classes/kelas-react.jpg" alt="Kelas React" />
-        <Image src="/img/classes/kelas-html-css.jpg" alt="Kelas HTML & CSS" />
+        <Image src="/img/classes/poster-html.jpg" alt="Kelas HTML" />
+        <Image src="/img/classes/poster-js.jpg" alt="Kelas JS" />
+        <Image src="/img/classes/poster-react.jpg" alt="Kelas React" />
+        <Image src="/img/classes/poster-nextjs.jpg" alt="Kelas Next JS" />
       </div>
     </>
   );
