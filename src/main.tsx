@@ -10,6 +10,7 @@ import Contents from "./pages/Contents.tsx";
 import Contact from "./pages/Contact.tsx";
 import Gears from "./pages/Gears.tsx";
 import Codes from "./pages/Codes.tsx";
+import Classes from "./pages/Classes.tsx";
 
 const router = createHashRouter([
   {
@@ -32,6 +33,10 @@ const router = createHashRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "classes",
+        element: <Classes />,
       },
       {
         path: "gears",

@@ -70,6 +70,7 @@ export const menus = [
   { link: "/projects", text: "Projects" },
   { link: "/contents", text: "Contents" },
   { link: "/contact", text: "Contact" },
+  { link: "/classes", text: "Classes" },
   { link: "/gears", text: "Gears" },
   { link: "/codes", text: "Codes" },
 ];
